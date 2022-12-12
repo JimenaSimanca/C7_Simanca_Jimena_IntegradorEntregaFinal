@@ -1,4 +1,4 @@
-package com.dh.Integrador.Models.Entities;
+package com.dh.Integrador.Models.Security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

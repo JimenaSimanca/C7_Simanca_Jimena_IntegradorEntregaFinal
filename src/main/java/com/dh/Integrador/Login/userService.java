@@ -1,6 +1,6 @@
 package com.dh.Integrador.Login;
 
-import com.dh.Integrador.Models.Entities.User;
+import com.dh.Integrador.Models.Security.User;
 import com.dh.Integrador.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

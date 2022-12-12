@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +29,7 @@ public class DentistController {
         return dentistWanted.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
     @PostMapping("")
-    public ResponseEntity<Dentist> registerNewDentist(@RequestBody Dentist dentist){
+    public ResponseEntity<Dentist> registerNewDentist(@Valid @RequestBody Dentist dentist){
         return ResponseEntity.ok(dentistService.saveDentist(dentist));
     }
     @PutMapping

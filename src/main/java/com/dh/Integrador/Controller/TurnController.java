@@ -77,25 +77,11 @@ public class TurnController {
         Optional<Turn> turnToDelete= turnService.searchTurnById(id);
         if (turnToDelete.isPresent()){
             turnService.deleteTurn(id);
-            return ResponseEntity.ok("Se eliminó al turno con id= "+id+" de la base de datos");
+            return ResponseEntity.ok("Se eliminó el turno con id= "+id+" de la base de datos");
         }
         else{
             throw new ResourceNotFoundException("!Error¡ No se pudo eliminar el turno con id "+ id+", Turno no encontrado");
         }
     }
 
-/*    @GetMapping("all")
-    public ResponseEntity<?> listAll() {
-        List<Turn> listTurn = services.listAll();
-        List<TurnDTO> listResponse = new ArrayList<>();
-        for (turn t:listTurn) {
-            TurnDTO tDTO = new TurnDTO();
-            tDTO.setDate(t.getFecha_y_hora().getDayOfMonth() + "/" + t.getFecha_y_hora().getMonthValue() + "/" + t.getFecha_y_hora().getYear());
-            tDTO.setHora(t.getFecha_y_hora().getHour() + ":" + t.getFecha_y_hora().getMinute());
-            tDTO.setOdontologo(t.getOdontologo().getApellido() + ", " + t.getOdontologo().getNombre());
-            tDTO.setPaciente(t.getPaciente().getApellido() + ", " + t.getPaciente().getNombre());
-            listaRespuesta.add(tDTO);
-        }
-        return ResponseEntity.ok(listResponse);
-    }*/
 }
